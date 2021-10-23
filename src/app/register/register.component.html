@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+
+body
+{
+	background-color: #1abc9c;
+	color: white;
+	height: 800px;
+}
+label
+{
+	color: black;
+}
+
+h1
+{
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+
+input
+{
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	color: black;
+}
+
+input[type=submit]
+{
+	background-color: #04AA6D;
+	color: white;
+	cursor: pointer;
+}
+
+.container
+{
+  margin: auto;  
+  margin: 20 0 0 450px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 34%;
+}
+
+
+.message {
+ 
+ color: black;
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+	<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+		<strong>Success!</strong> Your account has been created successfully!
+		<button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	  </div>
+
+
+<h1>Signup Page</h1>
+
+<div class="container">
+<form (ngSubmit) = "onSubmit()">
+	<label for="username">Username:</label>
+	<input type="text" name="username"  id = "Username"
+	[(ngModel)] = "employee.name"  required>
+	<br>
+	<label for="emailaddress">Email:</label>
+	<input type="text" name="emailaddress" id = "Email"
+	[(ngModel)] = "employee.email" required>
+	<br>
+	<label for="password">Password:</label>
+	<input type="password" name="password" id = "Password"
+	[(ngModel)] = "employee.password" required>
+	<br>
+	<label for="confirmpass">Confirm Password:</label>
+	<input type="password" name="confirmpass" id = "Confirm Password"
+	[(ngModel)] = "employee.confirm" required>
+	<br>
+
+	
+
+
+	<input type="submit" value="register">
+	
+	 <p class="message">Already have an account? <a href="#" routerLink= "/login-component" routerLinkActive="active"
+		 style="padding-left: 124px">Login here!</a></p>
+
+</form>
+</div>
+</body>
+</html>
